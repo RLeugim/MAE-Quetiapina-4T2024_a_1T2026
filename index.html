@@ -671,6 +671,189 @@ html, body {
   gap: 4px;
 }
 
+@media (max-width: 600px) {
+  .sh-top { padding: 6px 16px; }
+  .sh-name { font-size: 13px; }
+  .sh-sub  { font-size: 10px; }
+  .sh-pills { padding: 5px 16px; gap: 4px; }
+  .sh-pill  { font-size: 9.5px; padding: 2px 7px; }
+  .header-spacer { height: 0; }
+  .page-top { padding: 20px 20px 16px; }
+  .pt-title { font-size: 19px; }
+  .content  { padding: 20px 20px 20px; }
+  .nav-bar  { padding: 11px 20px; }
+  .footer   { padding: 10px 20px; }
+  .two-col  { grid-template-columns: 1fr; }
+  .teva-context-grid { grid-template-columns: 1fr; }
+  .close-cards { grid-template-columns: 1fr 1fr; }
+  .cover    { padding: 36px 28px 32px; }
+  .cover-title { font-size: 34px; }
+  .close-page { padding: 36px 28px 32px; }
+}
+
+/* ══════════════════════
+   RESPONSIVE — TABLET (≤900px)
+══════════════════════ */
+@media (max-width: 900px) {
+  .deck { padding: 16px 12px 48px; }
+
+  .cover { padding: 40px 32px 36px; min-height: 460px; }
+  .cover-title { font-size: 36px; }
+  .cover-subtitle { font-size: 17px; }
+
+  .close-page { padding: 40px 32px 36px; }
+  .close-heading { font-size: 30px; }
+  .close-cards { grid-template-columns: 1fr 1fr; }
+
+  .page-top { padding: 22px 28px 20px; }
+  .pt-title { font-size: 21px; }
+
+  .content { padding: 24px 28px 22px; gap: 20px; }
+  .nav-bar { padding: 11px 28px; }
+  .footer { padding: 10px 28px; }
+  .page-strip { padding: 7px 28px; }
+
+  .sh-pills { padding: 6px 20px; }
+  .sh-top { padding: 8px 20px; }
+}
+
+/* ══════════════════════
+   RESPONSIVE — MOBILE PORTRAIT (≤600px)
+══════════════════════ */
+@media (max-width: 600px) {
+  body { padding: 0; }
+  .deck { padding: 10px 8px 40px; }
+
+  /* header */
+  .sh-top { padding: 7px 14px; flex-wrap: wrap; gap: 6px; }
+  .sh-name { font-size: 13px; }
+  .sh-sub  { font-size: 10px; }
+  .sh-nav  { gap: 5px; }
+  .sh-dot  { width: 7px; height: 7px; }
+  .sh-dot.active { width: 18px; }
+  .sh-pills { padding: 5px 14px; gap: 5px; }
+  .sh-pill { font-size: 10px; padding: 2px 8px; }
+
+  /* cover */
+  .cover { padding: 28px 20px 28px; min-height: unset; }
+  .cover-title { font-size: 28px; }
+  .cover-subtitle { font-size: 15px; }
+  .cover-quote p { font-size: 14.5px; }
+  .cover-tags { gap: 6px; }
+  .cover-tag { font-size: 11px; padding: 4px 10px; }
+  .cover-footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .cover-meta { font-size: 11px; }
+
+  /* close */
+  .close-page { padding: 28px 20px 28px; min-height: unset; }
+  .close-heading { font-size: 24px; }
+  .close-sub { font-size: 15px; }
+  .close-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .close-card { padding: 14px 12px; }
+  .close-card-title { font-size: 11.5px; }
+  .close-card-text  { font-size: 11px; }
+  .close-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
+
+  /* inner pages */
+  .page-top { padding: 18px 18px 16px; }
+  .pt-eyebrow { font-size: 8.5px; }
+  .pt-title { font-size: 18px; }
+  .pt-sub   { font-size: 11.5px; }
+  .page-strip { padding: 6px 18px; font-size: 10px; }
+  .strip-label { display: none; }
+
+  .content { padding: 18px 18px 18px; gap: 18px; }
+
+  /* intro */
+  .intro-box { font-size: 14px; padding: 14px 16px; }
+
+  /* timeline */
+  .tl-item { grid-template-columns: 72px 14px 1fr; gap: 0 8px; }
+  .tl-date  { font-size: 10px; padding-top: 12px; }
+  .tl-name  { font-size: 13px; }
+  .tl-desc  { font-size: 12.5px; }
+
+  /* two-col → single col */
+  .two-col { grid-template-columns: 1fr; }
+
+  /* cards */
+  .card-head { font-size: 10px; padding: 9px 14px; }
+  .card-body { padding: 12px 14px; }
+  .card-body ul li { font-size: 12.5px; }
+
+  /* teva */
+  .teva-context-grid { grid-template-columns: 1fr; }
+  .teva-moment { padding: 16px 16px; }
+  .teva-moment p { font-size: 14px; }
+  .teva-moment-title { font-size: 16px; }
+  .teva-hero { padding: 16px 16px; }
+
+  /* info blocks */
+  .info-block { padding: 14px; }
+  .info-block p { font-size: 12.5px; }
+
+  /* key obs */
+  .key-obs { padding: 14px 16px; gap: 10px; }
+  .key-icon { font-size: 22px; }
+  .key-body h3 { font-size: 15px; }
+  .key-body p  { font-size: 12.5px; }
+
+  /* questions */
+  .q-item { padding: 10px 12px; gap: 10px; }
+  .q-num  { font-size: 18px; width: 18px; }
+  .q-text { font-size: 12.5px; }
+
+  /* nav */
+  .nav-bar { padding: 10px 18px; }
+  .nav-btn { padding: 7px 14px; font-size: 12px; }
+  .nav-center { font-size: 11px; }
+
+  /* footer */
+  .footer { padding: 9px 18px; font-size: 10px; }
+  .footer-row { flex-direction: column; gap: 2px; }
+}
+
+/* ══════════════════════
+   RESPONSIVE — MOBILE LANDSCAPE (≤900px height)
+══════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cover { min-height: unset; padding: 24px 32px; }
+  .close-page { min-height: unset; padding: 24px 32px; }
+  .cover-title { font-size: 28px; }
+  .close-heading { font-size: 24px; }
+  .close-cards { grid-template-columns: repeat(3, 1fr); }
+  .content { padding: 18px 28px; gap: 16px; }
+  .teva-context-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ══════════════════════
+   WINDOWS 16:9 — wide screens
+══════════════════════ */
+@media (min-width: 1100px) {
+  .deck { max-width: 900px; }
+  .cover-title { font-size: 48px; }
+  .close-heading { font-size: 40px; }
+  .pt-title { font-size: 26px; }
+  .content { padding: 34px 48px 30px; }
+  .page-top { padding: 30px 48px 26px; }
+  .nav-bar { padding: 14px 48px; }
+  .footer { padding: 12px 48px; }
+  .page-strip { padding: 8px 48px; }
+}
+
+@media (min-width: 1400px) {
+  .deck { max-width: 1020px; }
+  .cover-title { font-size: 54px; }
+  .content { padding: 38px 56px 34px; }
+  .intro-box { font-size: 16px; }
+  .tl-desc { font-size: 14px; }
+  .card-body ul li { font-size: 14px; }
+  .q-text { font-size: 14px; }
+}
+
+/* ══════════════════════
+   PRINT
+══════════════════════ */
 @media print {
   body { background: white; }
   #sticky-header { display: none; }
@@ -727,7 +910,7 @@ html, body {
     <div>
       <div class="cover-eyebrow">Documento clínico observacional · elaborado pela família · Março 2026</div>
       <div class="cover-title">Maria Glória<br><em>e o comprimido<br>para dormir</em></div>
-      <div class="cover-subtitle">Um ano e meio de observação familiar sobre os efeitos de diferentes formulações de quetiapina numa doente com dois AVC's e epilepsia vascular.</div>
+      <div class="cover-subtitle">A escassez europeia de quetiapina genérica obrigou a várias mudanças de marca — e foi numa dessas mudanças involuntárias que a família descobriu algo inesperado: após mais de um ano em mutismo, a Maria Glória voltou a falar.</div>
       <div class="cover-divider"></div>
       <div class="cover-quote">
         <p>«Após mais de um ano completamente sem falar, voltou a construir frases com sentido, com coerência, com a voz dela — no primeiro dia com uma marca diferente do mesmo medicamento.»</p>
@@ -844,7 +1027,7 @@ html, body {
       <span>Neurologia ULS Braga: Dr. Álvaro Machado &nbsp;·&nbsp; Neurologia CHMA: Dra. Daniela Vieira &nbsp;·&nbsp; Médica de família: Dra. Isabel Ribeiro Pereira</span>
     </div>
     <div class="footer-row">
-      <span>Maria Glória Araújo Gomes · Documento elaborado pela família · Março 2026</span>
+      <span>Maria Glória Araújo Gomes · SNS 196 589 516 · Documento elaborado pela família · Março 2026</span>
     </div>
   </div>
 </div>
@@ -945,7 +1128,7 @@ html, body {
       <span>Neurologia ULS Braga: Dr. Álvaro Machado &nbsp;·&nbsp; Neurologia CHMA: Dra. Daniela Vieira &nbsp;·&nbsp; Médica de família: Dra. Isabel Ribeiro Pereira</span>
     </div>
     <div class="footer-row">
-      <span>Maria Glória Araújo Gomes · Documento elaborado pela família · Março 2026</span>
+      <span>Maria Glória Araújo Gomes · SNS 196 589 516 · Documento elaborado pela família · Março 2026</span>
     </div>
   </div>
 </div>
@@ -1062,7 +1245,7 @@ html, body {
       <span>Neurologia ULS Braga: Dr. Álvaro Machado &nbsp;·&nbsp; Neurologia CHMA: Dra. Daniela Vieira &nbsp;·&nbsp; Médica de família: Dra. Isabel Ribeiro Pereira</span>
     </div>
     <div class="footer-row">
-      <span>Maria Glória Araújo Gomes · Documento elaborado pela família · Março 2026</span>
+      <span>Maria Glória Araújo Gomes · SNS 196 589 516 · Documento elaborado pela família · Março 2026</span>
     </div>
   </div>
 </div>
@@ -1172,7 +1355,7 @@ html, body {
       <span>Neurologia ULS Braga: Dr. Álvaro Machado &nbsp;·&nbsp; Neurologia CHMA: Dra. Daniela Vieira &nbsp;·&nbsp; Médica de família: Dra. Isabel Ribeiro Pereira</span>
     </div>
     <div class="footer-row">
-      <span>Maria Glória Araújo Gomes · Documento elaborado pela família · Março 2026</span>
+      <span>Maria Glória Araújo Gomes · SNS 196 589 516 · Documento elaborado pela família · Março 2026</span>
     </div>
   </div>
 </div>
@@ -1246,11 +1429,29 @@ html, body {
 function goTo(n) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('p' + n).classList.add('active');
-  // update sticky header dots
   document.querySelectorAll('.sh-dot').forEach((d,i) => {
     d.classList.toggle('active', i === n-1);
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Dynamic spacer — always matches real header height
+const header  = document.getElementById('sticky-header');
+const spacer  = document.querySelector('.header-spacer');
+
+function syncSpacer() {
+  spacer.style.height = header.offsetHeight + 'px';
+}
+
+// Run immediately, on load, on resize, on orientation change
+syncSpacer();
+window.addEventListener('load', syncSpacer);
+window.addEventListener('resize', syncSpacer);
+window.addEventListener('orientationchange', () => setTimeout(syncSpacer, 250));
+
+// Also use ResizeObserver for maximum reliability (catches font-load shifts, etc.)
+if (window.ResizeObserver) {
+  new ResizeObserver(syncSpacer).observe(header);
 }
 </script>
 </body>
