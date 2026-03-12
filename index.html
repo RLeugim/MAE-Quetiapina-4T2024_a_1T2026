@@ -1435,24 +1435,44 @@ function goTo(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Dynamic spacer — always matches real header height
-const header  = document.getElementById('sticky-header');
-const spacer  = document.querySelector('.header-spacer');
+// ── SYNC ENGINE ──────────────────────────────────────────────────────────────
+// Keeps the deck width identical to the header width, and the spacer height
+// identical to the header height — at all times, on all devices.
+//
+// Triggers: font load, pill wrap, orientation change, zoom, window resize,
+// any DOM mutation that changes the header's bounding box.
+// ─────────────────────────────────────────────────────────────────────────────
+const header = document.getElementById('sticky-header');
+const spacer = document.querySelector('.header-spacer');
+const deck   = document.querySelector('.deck');
 
-function syncSpacer() {
+function sync() {
+  const rect = header.getBoundingClientRect();
+  // Height: spacer reserves exactly the right gap below the fixed header
   spacer.style.height = header.offsetHeight + 'px';
+  // Width: deck matches the rendered width of the header (respects padding/scroll)
+  deck.style.width     = rect.width + 'px';
+  deck.style.maxWidth  = rect.width + 'px';
+  deck.style.marginLeft  = rect.left + 'px';
+  deck.style.marginRight = 'unset';
 }
 
-// Run immediately, on load, on resize, on orientation change
-syncSpacer();
-window.addEventListener('load', syncSpacer);
-window.addEventListener('resize', syncSpacer);
-window.addEventListener('orientationchange', () => setTimeout(syncSpacer, 250));
-
-// Also use ResizeObserver for maximum reliability (catches font-load shifts, etc.)
+// 1. ResizeObserver — fires on every pixel change of the header box
 if (window.ResizeObserver) {
-  new ResizeObserver(syncSpacer).observe(header);
+  new ResizeObserver(sync).observe(header);
 }
+
+// 2. Fallback + orientation change (ResizeObserver may not fire on rotate)
+window.addEventListener('resize', sync);
+window.addEventListener('orientationchange', () => { sync(); setTimeout(sync, 300); });
+
+// 3. Font load — Playfair/Crimson/DM Sans affect pill wrap height
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(sync);
+}
+
+// 4. Initial call (before any event fires)
+sync();
 </script>
 </body>
 </html>
